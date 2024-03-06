@@ -1,0 +1,1 @@
+Simple Warhammer 10th Edition calculator written in python with a Tkinter GUI. 
