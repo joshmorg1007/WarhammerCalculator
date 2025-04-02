@@ -13,7 +13,7 @@ def caclulate_hit(
     sustained_hits: int = 0,
     crit_on: int = 6,
 ) -> tuple[float, float]:
-    if balistic_or_weapon_skill == None:
+    if balistic_or_weapon_skill == 0 or balistic_or_weapon_skill == None:
         return number_of_attacks, 0
     modified_balistic_or_weapon_skill = balistic_or_weapon_skill
     if hit_modifier < 0:

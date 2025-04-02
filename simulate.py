@@ -27,8 +27,11 @@ def sim_hit_roll(
     sustained_hits: int = 0,
     crit_on: int = 6,
 ) -> tuple[int, int]:
-    modified_balistic_skill = balistic_or_weapon_skill + -1 * hit_modifier
-    modified_balistic_skill = max(2, min(modified_balistic_skill, 6))
+    if balistic_or_weapon_skill is not None:
+        modified_balistic_skill = balistic_or_weapon_skill + -1 * hit_modifier
+        modified_balistic_skill = max(2, min(modified_balistic_skill, 6))
+    else:
+        modified_balistic_skill = 1
 
     hits, crits, ones = sim_roll(number_of_attacks, modified_balistic_skill, crit_on)
     misses = number_of_attacks - hits
